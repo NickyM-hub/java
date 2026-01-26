@@ -9,7 +9,7 @@ abstract class Funcionario implements Pagamento {
     }
 
     @Override
-    public abstract void processarPagamento(double valor);
+    public abstract processarPagamento(double valor);
 
     abstract double calcularBonus();
 
@@ -20,15 +20,15 @@ class Bibliotecario extends Funcionario {
     super(nome, salario);
 
     @Override
-    double calcularBonus() {
-        return salario * 0.05;
-}
-
-    @Override
-    public processarPagamento(double valor) {
-        return 
+    public double calcularBonus() {
+        return salario * 0.01;
     }
 
+    @Override 
+    public abstract void processarPagamento(double valor) {
+        valor * 0.2;
+    }
+}
 
 class Gerente extends Funcionario {
     private String nome;
@@ -43,4 +43,7 @@ class Gerente extends Funcionario {
     double calcularBonus() {
         return salario * 0.1;
     }
+
+    @Override
+    public abstract void processarPagamento(double valor);
 }
