@@ -45,7 +45,8 @@ class Bibliotecario extends Funcionario {
 
     @Override
     public void processarPagamento(double valor) {
-        double total = getSalario() + calcularBonus() - valor;
+        valor = getSalario();
+        double total = valor + calcularBonus();
         System.out.println("Pagamento total: " + total);
     }
 
@@ -69,7 +70,8 @@ class Gerente extends Funcionario {
 
     @Override
     public void processarPagamento(double valor) {
-        double total = getSalario() + calcularBonus() - valor;
+        valor = getSalario();
+        double total = valor + calcularBonus();
         System.out.println("Pagamento total: " + total);
     }
 
