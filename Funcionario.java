@@ -46,10 +46,16 @@ class Bibliotecario extends Funcionario {
 
     @Override
     public void processarPagamento(double valor) {
-        double total = getSalario() + calcularBonus() + valor;
+        double total = getSalario() + calcularBonus() - valor;
         System.out.println("Pagamento total: " + total);
     }
+
+    @Override
+    public void mostrarDados() {
+        System.out.println("O bibliotecário se chama: " + getNome() + ", e o seu salário é: R$" + getSalario());
+    }
 }
+
 
 class Gerente extends Funcionario {
 
@@ -62,10 +68,16 @@ class Gerente extends Funcionario {
         return getSalario() * 0.5;
     }
 
+    // o valor é um desconto
     @Override
     public void processarPagamento(double valor) {
-        double total = getSalario() + calcularBonus() + valor;
+        double total = getSalario() + calcularBonus() - valor;
         System.out.println("Pagamento total: " + total);
+    }
+
+    @Override
+    public void mostrarDados() {
+        System.out.println("O gerente se chama: " + getNome() + ", e o seu salário é: R$" + getSalario());
     }
 }
 
