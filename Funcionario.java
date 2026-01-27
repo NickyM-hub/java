@@ -21,7 +21,6 @@ abstract class Funcionario implements Pagamento {
     public Funcionario(String nome, float salario) {
         this.nome = nome;
         this.salario = salario;
-        
     }
 
     @Override
@@ -68,7 +67,6 @@ class Gerente extends Funcionario {
         return getSalario() * 0.5;
     }
 
-    // o valor é um desconto
     @Override
     public void processarPagamento(double valor) {
         double total = getSalario() + calcularBonus() - valor;
@@ -80,4 +78,3 @@ class Gerente extends Funcionario {
         System.out.println("O gerente se chama: " + getNome() + ", e o seu salário é: R$" + getSalario());
     }
 }
-
