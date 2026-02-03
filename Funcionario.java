@@ -1,4 +1,4 @@
-abstract class Funcionario implements Pagamento {
+public abstract class Funcionario implements Pagamento {
     private String nome;    
     private float salario;
 
@@ -65,7 +65,7 @@ class Gerente extends Funcionario {
 
     @Override
     double calcularBonus() {
-        return getSalario() * 0.5;
+        return getSalario() * 0.2;
     }
 
     @Override
